@@ -1,0 +1,3 @@
+Ejercicio 1: La cadena mas larga tiene un tamaño de 7
+Ejercicio 2: La cadena mas larga tiene un tamaño de 7 y la más corta de 4
+Ejercicio 3: fl
