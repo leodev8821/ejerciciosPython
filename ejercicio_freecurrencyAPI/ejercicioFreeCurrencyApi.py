@@ -1,5 +1,9 @@
 import freecurrencyapi
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 """     https://app.freecurrencyapi.com
 Usando freecurency api vamos a comprar 
@@ -9,7 +13,7 @@ Usando freecurency api vamos a comprar
  """
 def buy_sell_INR_with_TRY():
     try:
-        api_key='fca_live_xVx84ABKqFiioeyfn4VpIAUu1eBzXtmyR11XEMEM'
+        api_key = os.getenv("FREECURRENCY_API_KEY")
         client = freecurrencyapi.Client(f"{api_key}")
 
         first_move = client.historical(date='2023-01-01', base_currency='TRY', currencies=['INR'])
@@ -34,7 +38,7 @@ def buy_sell_INR_with_TRY():
 
 # 1. Una función que haga cualquier request contra free currency api
 def any_request_freecurrency_api(type='status', date='2025-01-01', base_currency=None, currencies=[]):
-    api_key='fca_live_xVx84ABKqFiioeyfn4VpIAUu1eBzXtmyR11XEMEM'
+    api_key = os.getenv("FREECURRENCY_API_KEY")
     base_url = f'https://api.freecurrencyapi.com/v1/'
     
     if currencies is None:
@@ -94,7 +98,7 @@ def any_request_freecurrency_api(type='status', date='2025-01-01', base_currency
 
 # 2. Una función que haga la conversión entre monedas
 def currency_converter(base_amount=0, base_currency=None, currencies=[]):
-    api_key='fca_live_xVx84ABKqFiioeyfn4VpIAUu1eBzXtmyR11XEMEM'
+    api_key = os.getenv("FREECURRENCY_API_KEY")
     base_url = f'https://api.freecurrencyapi.com/v1/'
     
     if currencies is None:

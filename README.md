@@ -1,3 +1,6 @@
+# Ejecución
+Ejecutar el main.py y alli salen los menus
+```python .\main.py```
 # Manuales y ejercicios de Python
 
 https://python-docs-es.readthedocs.io/es/3.12/tutorial/index.html
