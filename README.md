@@ -148,3 +148,31 @@ Cread la tabla en un esquema en vuestra base de datos
 
 2. Ejercicio 2:
 suponiendo que el precio está en dólares, ¿cuantas libras ha costado si lo hubieramos hecho hoy?
+
+# Ejercicio DataSet 
+
+Partiendo de [aquí](https://oscarbaruffa.com/messy/) acceder al fichero [dataset](https://docs.google.com/spreadsheets/d/1IPS5dBSGtwYVbjsfbaMCYIWnOuRmJcbequohNxCyGVw/edit?resourcekey=&gid=1625408792#gid=1625408792) y solucionar las siguientes cuestiones: 
+
+## Ejercicios de la propia página 
+
+    1. Which industry pays the most? 
+
+    2. How does salary increase given years of experience? 
+
+    3. How do salaries compare for the same role in different locations? 
+
+    4. How much do salaries differ by gender and years of experience? 
+
+    5. How do factors like race and education level correlate with salary? 
+
+    6. Is there a “sweet spot” total work experience vs years in the specific field? 
+
+## Limpiar Dataset 
+
+    1. Comprobar los datos y unificarlos cuando sea necesario (EJ: En la columna K tenemos estados unidos de diferentes maneras: US, USA, United States, etc) 
+
+    2. Preparar los datos para poder trasladarlos a la base de datos de northwind, en tu esquema de ejercicios (tunombre.northwind) 
+
+## Modelizado 
+
+    1. Re-estructura el dataset para que tenga sentido. (EJ: la primera columna tiene rangos de edad, tendría más sentido que fuesen ids que referencian a una tabla con el rango de edad correspondiente.) 
