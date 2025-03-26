@@ -3,6 +3,8 @@ from segundo_bloque import ejercicioB2_1, ejercicioB2_2
 from ejercicio_pandas import open_connection, make_dataframe, best_cripto
 from ejercicio_freecurrencyAPI import buy_sell_INR_with_TRY, any_request_freecurrency_api, currency_converter
 from ejercicio_multipleAPI import multiAPI
+from examen_python import exam_p1, exam_p2
+from ejercicio_API_AEMET import solucion
 
 # Parámetros de las funciones de los ejercicios
 strs = ["flower", "flow", "flight", "flowers"]
@@ -19,7 +21,9 @@ def main():
         print("3. Ejercicio Pandas")
         print("4. Ejercicio FreeCurrencyAPI")
         print("5. Ejercicio MultipleAPI")
-        print("6. Terminar la ejecución")
+        print("6. Examen Python")
+        print("7. Ejercicio API AEMET")
+        print("8. Terminar la ejecución")
         
         seleccion = input("Selecciona una opción: ").upper()
         
@@ -35,9 +39,9 @@ def main():
                 subseleccion = input("Selecciona una opción: ").upper()
                 match subseleccion:
                     case "1":
-                        ejercicio1(strs)
+                        exam_p1(strs)
                     case "2":
-                        ejercicio2(strs)
+                        exam_p2(strs)
                     case "3":
                         ejercicio3(strs)
                     case "4":
@@ -107,7 +111,7 @@ def main():
                         print("Opción no válida")
             
             case "5":
-                print("\n*** 4. EJERCICIO MultipleAPI ***")
+                print("\n*** 5. EJERCICIO MultipleAPI ***")
                 print("1. Ejecutar el ejercicio")
                 print("2. Volver")
 
@@ -121,6 +125,35 @@ def main():
                         print("Opción no válida")
 
             case "6":
+                print("\n*** 6. EXÁMEN PYTHON ***")
+                print("1. Ejecutar el ejercicio 1")
+                print("2. Ejecutar el ejercicio 2")
+                print("3. Volver")
+
+                subseleccion = input("Selecciona una opción: ").upper()
+                match subseleccion:
+                    case "1":
+                        exam_p1()
+                    case "2":
+                        exam_p2()
+                    case "3":
+                        continue
+                    case _:
+                        print("Opción no válida")
+            case "7":
+                print("\n*** 7. Ejercicio API AEMET ***")
+                print("1. Ejecutar la solución")
+                print("2. Volver")
+
+                subseleccion = input("Selecciona una opción: ").upper()
+                match subseleccion:
+                    case "1":
+                        solucion()
+                    case "2":
+                        continue
+                    case _:
+                        print("Opción no válida")
+            case "8":
                 break
             case _:
                 print("Opción no válida")
