@@ -5,6 +5,7 @@ from ejercicio_freecurrencyAPI import buy_sell_INR_with_TRY, any_request_freecur
 from ejercicio_multipleAPI import multiAPI
 from examen_python import exam_p1, exam_p2
 from ejercicio_API_AEMET import solucion
+from puntos_extra import solucion1, solucion2
 
 # Parámetros de las funciones de los ejercicios
 strs = ["flower", "flow", "flight", "flowers"]
@@ -23,7 +24,8 @@ def main():
         print("5. Ejercicio MultipleAPI")
         print("6. Examen Python")
         print("7. Ejercicio API AEMET")
-        print("8. Terminar la ejecución")
+        print("8. Puntos Extras")
+        print("9. Terminar la ejecución")
         
         seleccion = input("Selecciona una opción: ").upper()
         
@@ -140,6 +142,7 @@ def main():
                         continue
                     case _:
                         print("Opción no válida")
+
             case "7":
                 print("\n*** 7. Ejercicio API AEMET ***")
                 print("1. Ejecutar la solución")
@@ -153,7 +156,25 @@ def main():
                         continue
                     case _:
                         print("Opción no válida")
+
             case "8":
+                print("\n*** 8. PUNTOS EXTRA ***")
+                print("1. Ejecutar la solución 1")
+                print("2. Ejecutar la solución 2")
+                print("3. Volver")
+
+                subseleccion = input("Selecciona una opción: ").upper()
+                match subseleccion:
+                    case "1":
+                        solucion1()
+                    case "2":
+                        solucion2()
+                    case "3":
+                        continue
+                    case _:
+                        print("Opción no válida")
+                        
+            case "9":
                 break
             case _:
                 print("Opción no válida")

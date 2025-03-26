@@ -11,6 +11,7 @@ load_dotenv()
 # su dirección
 def exam_p1():
     #TODO
+    print('Not implemented yet...')
     return None
 
 #Ejercicio 2: Conectaros a la base de datos de northwind y sacad los productos de la tabla productos queremos hacer una compra 
