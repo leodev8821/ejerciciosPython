@@ -1,35 +1,63 @@
 import pandas as pd
+from .normalize_functions import *
 
 #1. Which industry pays the most?
 def part1():
     # Leo el excel
     rdf = pd.read_excel('Ask_A_Manager_Salary_Survey_2021.xlsx', engine='openpyxl')
 
-    # Extraigo las columnas 2 y 5 y les asigno un nombre en un nuevo dataframe
-    my_df = rdf.iloc[:, [2, 5]].copy()
-    my_df.columns = ['Industries', 'Anual Salary']
+    # Columna time_stamp
+    time_stamp_df = rdf.iloc[:, 0]
 
-    #parámetros para reemplazar
-    replacements = {
-    'academia': 'academic',
-    'administrative': 'administration',
-    'archaeologist' : 'archaeology',
-    '"Government Relations"' : 'Government Relations'
-    }
+    # Columna age_range
+    age_range_df = rdf.iloc[:, 1]
 
-    # Normalizar nombres de la columna 1
-    my_df['Industries'] = (
-        my_df['Industries']
-        .str.strip()
-        .str.lower()
-        .replace(replacements, regex=True)
-    )  
+    # Columna con el rango normalizado age_range_id
+    age_range_id_df = normalize_age_range(age_range_df)
 
-    # Extracción de especialización
-    mask_academic = my_df['Industries'].str.contains(r'^academic[-/\s]+', regex=True, na=False)
-    mask_admin = my_df['Industries'].str.contains(r'^administration[-/\s]+', regex=True, na=False)
-    mask_aerospace = my_df['Industries'].str.contains(r'^aerospace[-/\s]+', regex=True, na=False)
-    mask_archaeology = my_df['Industries'].str.contains(r'^archaeology[-/\s]+', regex=True, na=False)
+    # Columna indrustries
+    industries_df = rdf.iloc[:,2]
+
+    # Columna normalized_industries
+    normalized_industries_df = normalize_industries(industries_df)
+
+    #unir todos los dataframe
+    final_df = pd.concat([
+        time_stamp_df,
+        age_range_df,
+        age_range_id_df,
+         industries_df,
+         normalized_industries_df
+    ], axis=1)
+
+    final_df.columns = ['time_stamp', 'age_range', 'age_range_id', 'work_industries', 'normalized_industries']
+
+    # almacenar los dataframe en un txt
+    with open("clean_df.txt", "w", encoding='utf-8') as file:
+        file.write(final_df.to_string(index=False))
+        
+    file.close()
+
+    """ cleaned_df.columns = [
+        'job_title',
+        'job_context',
+        'anual_salary',
+        'aditional_monetary',
+        'currency',
+        'other_currency',
+        'income_context',
+        'country',
+        'usa_state',
+        'work_city',
+        'total_experience_years',
+        'field_experience_years',
+        'educational_level',
+        'gender',
+        'race'
+        ] """
+    """  
+
+    
 
     patronAcademic = r'^academic[-/\s]+(.*)'
     patronAdmin = r'administration[-/\s]+(.*)'
@@ -54,23 +82,10 @@ def part1():
     with open("clean_df.txt", "w", encoding='utf-8') as file:
         file.write(df_resultado.to_string(index=False))
         
-    file.close()
+    file.close() """
 
     #print(df_resultado)
 
-
-def normalize(my_df, mask, regex):
-    my_df.loc[mask, 'specialization'] = (
-        my_df.loc[mask, 'Industries']
-        .str.extract(regex)[0]
-        .fillna('')
-        .str.lower()
-        .str.replace(r'[\/\&]', ' ', regex=True)
-        .str.replace(r'[^a-z\s]', '', regex=True)
-        .str.replace('and', '')
-        .str.replace(r'\s+', ' ', regex=True)
-    )
-    return my_df
 
 part1()
  

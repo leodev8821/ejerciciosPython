@@ -7,6 +7,10 @@ __pycache__/
 # Archivos Excel
 *.xlsx
 
+# Archivos txt
+*clean.txt
+*salida.txt
+
 # Environments
 env
 .env
