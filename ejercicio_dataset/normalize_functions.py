@@ -39,10 +39,10 @@ def normalize_industries(df):
     else:
         raise ValueError("El parámetro debe ser un Series o DataFrame de pandas")
     
-    df['normalized_industries'] = df['normalized_industries'].apply(normalize_text2)
+    df['normalized_industries'] = df['normalized_industries'].apply(normalize_text)
     return df
 
-def normalize_text2(text):
+def normalize_text(text):
     script_dir = os.path.dirname(__file__)
     json_path = os.path.join(script_dir, 'json_patterns', 'industries.json')
         
