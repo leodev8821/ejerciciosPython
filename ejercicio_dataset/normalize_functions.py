@@ -70,3 +70,28 @@ def normalize_text(text):
             return replacement
             
     return 'other'
+
+# Normaliza el currency
+# Return --> Un DF con una columna 'currency_id' y su id equivalente
+def normalize_currency(df):
+    # Si es serie, lo convierto a DF
+    if isinstance(df, pd.Series):
+        df = df.to_frame()
+    # Extraigo el nombre de la columna del DF
+    column_name = df.columns[0]
+    
+    # mapeo de los currency con su id
+    script_dir = os.path.dirname(__file__)
+    json_path = os.path.join(script_dir, 'json_patterns', 'industries.json')
+        
+    with open(json_path, 'r', encoding='utf-8') as archive:
+        replacement_groups = json.load(archive)
+
+    # Renombro la columna con el de 'currency_id'
+    df = df.rename(columns={column_name: 'currency_id'})
+
+    # Voy creando a partir de reemplazar valores en el nuevo DF
+    with pd.option_context('future.no_silent_downcasting', True):
+        df['currency_id'] = df['currency_id'].replace(replacement_groups)
+
+    return df

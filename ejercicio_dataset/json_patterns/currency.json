@@ -1,0 +1,13 @@
+{
+    "AUD/NZD" : 1,
+    "CAD" : 2,
+    "CHF" : 3,
+    "EUR" : 4,
+    "GBP" : 5,
+    "HKD" : 6,
+    "JPY" : 7,
+    "SEK" : 8,
+    "USD" : 9,
+    "ZAR" : 10,
+    "Other" : 11
+}

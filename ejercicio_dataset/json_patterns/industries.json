@@ -227,6 +227,7 @@
         "Student (no job)",
         "Not employed",
         "Work-Study",
-        "Undergrad student"
+        "Undergrad student",
+        "no_value"
     ]
 }
