@@ -63,7 +63,7 @@ def part1():
         'job_title', 
         'job_title_context',
         'anual_salary',
-        'aditional_monetary'
+        'aditional_monetary',
         'currency',
         'currency_id'
         ]
