@@ -39,10 +39,10 @@ def normalize_industries(df):
     else:
         raise ValueError("El parámetro debe ser un Series o DataFrame de pandas")
     
-    df['normalized_industries'] = df['normalized_industries'].apply(normalize_text)
+    df['normalized_industries'] = df['normalized_industries'].apply(normalize_text2)
     return df
 
-def normalize_text(text):
+def normalize_text2(text):
     script_dir = os.path.dirname(__file__)
     json_path = os.path.join(script_dir, 'json_patterns', 'industries.json')
         
@@ -57,14 +57,16 @@ def normalize_text(text):
         return 'unknown'
     
     for replacement, targets in replacement_groups.items():
-        best_match, score, _ = process.extractOne(
+        result = process.extractOne(
             text,
             targets,
-            scorer=fuzz.token_set_ratio,
             processor=None
         )
-        
-        if score >= 80:
+        if result is None:
+            continue
+            
+        best_match, score, _ = result
+        if score >= 90:
             return replacement
             
-    return '***'
+    return 'other'
