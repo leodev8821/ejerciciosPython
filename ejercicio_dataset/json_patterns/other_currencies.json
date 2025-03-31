@@ -1,0 +1,141 @@
+{
+    "ARS": [
+        "argent",
+        "ars"
+    ],
+    "AUD": [
+        "aud",
+        "austra",
+        "-"
+    ],
+    "BDT": [
+        "bdt"
+    ],
+    "BRL":[
+        "brl"
+    ],
+    "CAD": [
+        "cad",
+        "canad"
+    ],
+    "CHF": [
+        "chf"
+    ],
+    "COP": [
+        "col",
+        "cop"
+    ],
+    "CZK": [
+        "czech"
+    ],
+    "DKK": [
+        "danish",
+        "dkk"
+    ],
+    "EUR": [
+        "eur",
+        "Additonal = Bonus plus"
+    ],
+    "GBP": [
+        "gbp",
+        "It’s marketed"
+    ],
+    "HRK": [
+        "croat"
+    ],
+    "IDR": [
+        "idr"
+    ],
+    "INR": [
+        "inr",
+        "rupee"
+    ],
+    "KRW": [
+        "kore",
+        "krw"
+    ],
+    "KWD": [
+        "kwd"
+    ],
+    "LKR": [
+        "lkr"
+    ],
+    "NIS": [
+        "ils",
+        "isra"
+    ],
+    "MYR": [
+        "myr"
+    ],
+    "MXN": [
+        "mexi",
+        "mxn"
+    ],
+    "NGN": [
+        "ngn"
+    ],
+    "NOK":[
+        "nok"
+    ],
+    "PHP": [
+        "php",
+        "phi"
+    ],
+    "PLN": [
+        "pln",
+        "polish"
+    ],
+    "SGD": [
+        "singapo",
+        "sgd"
+    ],
+    "TWD": [
+        "ntd",
+        "twd"
+    ],
+    "RMB": [
+        "rmb"
+    ],
+    "SAR": [
+        "sar"
+    ],
+    "SEK":[
+        "sek"
+    ],
+    "THB": [
+        "thb",
+        "thai"
+    ],
+    "TRY": [
+        "try"
+    ],
+    "TTD": [
+        "ttd"
+    ],
+    "TZS": [
+        "tzs"
+    ],
+    "USD": [
+        "usd",
+        "us dol",
+        "rsu",
+        "overtime",
+        "i work ",
+        "converted mine",
+        "additional",
+        "option",
+        "up to",
+        "many",
+        "my",
+        "base",
+        "stock"
+    ],
+    "ZAR": [
+        "zar"
+    ],
+    "other":[
+        "na",
+        "n/a",
+        "non"
+    ]
+}

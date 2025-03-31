@@ -3,6 +3,13 @@
         "academia",
         "academic"
     ],
+    "mining": ["minin"],
+    "apparel": ["apparel"],
+    "archaeology": ["archaeo"],
+    "architecture": ["archit"],
+    "beauty": ["beauty"],
+    "entertainment": ["entertainment"],
+    "fund_raising": ["fundraising"],
     "admin": [
         "admin"
     ],
@@ -17,8 +24,10 @@
         "defence"
     ],
     "law" : [
-        "law"
+        "law",
+        "law enforcement & security"
     ],
+    "minning": ["minning"],
     "library" : [
         "librar"
     ],
@@ -42,7 +51,8 @@
         "oil"
     ],
     "science" : [
-        "scienc"
+        "scienc",
+        "scient"
     ],
     "advertising" : [
         "dvertis"
@@ -101,11 +111,13 @@
         "retail"
     ],
     "hr" : [
-        "ecruitm"
+        "ecruitm",
+        "human"
     ],
     "sales" : [
         "sales"
     ],
+    "software": ["software"],
     "social_work" : [
         "social work"
     ],
@@ -120,8 +132,11 @@
         "urban"
     ],
     "video_game" : [
-        "video game"
+        "video game",
+        "game",
+        "gamming"
     ],
+    "museum": ["museum"],
     "e_commerce":[
         "ecommerce",
         "e-comm"
@@ -212,7 +227,8 @@
     ],
     "health" : [
         "health",
-        "hospital"
+        "hospital",
+        "medical"
     ],
     "events" : [
         "Event"
@@ -223,11 +239,14 @@
     "Engineering" : [
         "enginee"
     ],
+    "automotive": ["autom"],
+    "childcare": ["childca", "child ca", "child and"],
+    "consumer_goods": ["goods"],
     "n/a": [
         "Student (no job)",
         "Not employed",
         "Work-Study",
-        "Undergrad student",
-        "no_value"
-    ]
+        "Undergrad student"
+    ],
+    "no_data": ["no_data"]
 }
