@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ titulo }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/humidity_card.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Consultar el tiempo</h1>
+        <form method="POST" action="/obtener-tiempo">
+            <input type="text" name="city" placeholder="Introduce la ciudad" required/>
+            <button type="submit">Enviar</button>
+        </form>
+        
+        {% if ciudad %}
+        <h2>Resultado para: {{ ciudad }}</h2>
+        {% endif %}
+
+        <div class="table-container">
+            {% if resultado1 %}
+                {{ resultado1|safe }}
+            {% endif %}
+        </div>
+        <div class="table-container">
+            {% if resultado2 %}
+                {{ resultado2|safe }}
+            {% endif %}
+        </div>
+
+        {% if humidity %}
+        <div class="card-container">
+            <div class="card-title">
+                <h2>Humedad</h2>
+            </div>
+            <div class="data-complete">
+                <div class="data1">
+                    <p class="percent">
+                        {{ humidity|safe }}
+                        <span>%</span>
+                    </p>
+                    <p class="subtitle">Punto de rocío</p>
+                    <p class="dewpoint">
+                        {% if dewpoint %}
+                            {{ dewpoint|safe }}
+                        {% endif %}
+                        <span>º</span>
+                    </p>
+                </div>
+                <div class="data2">
+                    <div class="progress-container">
+                        <div class="progress-bar" style="height: {{ humidity }}%;"></div>
+                        <div class="progress-value">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        
+        {% if error %}
+        <div class="error">
+            {{ error }}
+        </div>
+        {% endif %}
+        
+        <a href="/" class="back-link">Volver al inicio</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ titulo }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Tiempo actual</h1>
+    <label>Introduce la ciudad</label>
+    <form action="submit">
+        <input type="text" name="city" placeholder="Introduce la ciudad" required/>
+        <button type="submit">Enviar</button>
+    </form>
+    <a href="/">Volver al inicio</a>
+
+    <!-- Mostrar el resultado si existe -->
+    {% if resultado1  %}
+        <h2>Resultado:</h2>
+        <p>{{ resultado1 }}</p>
+        <p>{{ resultado2 }}</p>
+    {% endif %}
+</body>
+</html>

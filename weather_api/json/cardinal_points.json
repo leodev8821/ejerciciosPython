@@ -1,0 +1,18 @@
+{
+    "norte": ["N", "North"],
+    "noreste": ["NE", "Northeast"],
+    "noroeste": ["NW", "Northwest"],
+    "este": ["E", "East"],
+    "oeste": ["W", "West"],
+    "sureste": ["SE", "Southeast"],
+    "suroeste": ["SW", "Southwest"],
+    "sur": ["S", "South"],
+    "nornoreste": ["NNE", "North-Northeast"],
+    "nornoroeste": ["NNW", "North-Northwest"],
+    "estsureste": ["ESE", "East-Southeast"],
+    "estsuroeste": ["ESE", "East-Southwest"],
+    "sursureste": ["SSE", "South-Southeast"],
+    "sursuroeste": ["SSW", "South-Southwest"],
+    "oestenoroeste": ["WNW", "West-Northwest"],
+    "oestesuroeste": ["WSW", "West-Southwest"]
+}

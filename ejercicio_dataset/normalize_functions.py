@@ -255,7 +255,6 @@ def convert_us_states_text(text):
             
     return 'n/a'
 
-
 # Normaliza el currency
 # Return --> Un DF con una columna 'currency_id' y su id equivalente
 def normalize_currency(df):

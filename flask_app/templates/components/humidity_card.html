@@ -1,0 +1,29 @@
+<div class="card-container">
+    <div class="card-title">
+        <h2>Humedad</h2>
+    </div>
+    <div class="data-complete">
+        <div class="data1">
+            <p class="percent">
+                {% if humidity %}
+                    {{ humidity|safe }}
+                {% endif %}
+                <span>%</span>
+            </p>
+            <p class="subtitle">Punto de rocío</p>
+            <p class="dewpoint">
+                {% if dewpoint %}
+                    {{ dewpoint|safe }}
+                {% endif %}
+                <span>º</span>
+            </p>
+        </div>
+        <div class="data2">
+            <div class="progress-container">
+                <div class="progress-bar" style="height: {{ humidity }}%;"></div>
+                <div class="progress-value">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

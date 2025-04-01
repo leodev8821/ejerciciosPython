@@ -153,20 +153,20 @@ def part1():
         'race'
         ]
 
-    # almacenar los dataframe en un txt
-    # with open("clean_df.txt", "w", encoding='utf-8') as file:
-    #     file.write(final_df.to_string(index=False))
+    #almacenar los dataframe en un txt
+    with open("clean_df.txt", "w", encoding='utf-8') as file:
+         file.write(final_df.to_string(index=False))
         
-    # file.close()
+    file.close()
 
     # Si el Excel no existe, lo crea
-    if not os.path.exists('normalized_answer.xlsx'):
-        with pd.ExcelWriter('normalized_answer.xlsx',mode='w',engine='openpyxl') as writer:
-            final_df.to_excel(
-                writer,
-                sheet_name='normalized_answer',
-                index=False
-            )
+    # if not os.path.exists('normalized_answer.xlsx'):
+    #     with pd.ExcelWriter('normalized_answer.xlsx',mode='w',engine='openpyxl') as writer:
+    #         final_df.to_excel(
+    #             writer,
+    #             sheet_name='normalized_answer',
+    #             index=False
+    #         )
 
     # # Obtener industria base y agrupar
     # my_df['Industries'] = my_df['Industries'].str.extract(r'^\s*([^-/\s]+)', expand=False)
@@ -179,7 +179,7 @@ def part1():
     # )
 
 part1()
- 
+
 
 #2. How does salary increase given years of experience? 
 
