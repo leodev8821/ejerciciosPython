@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ titulo }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/humidity_card.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
     <div class="container">
         <h1>Consultar el tiempo</h1>
         <form method="POST" action="/obtener-tiempo">
@@ -66,5 +60,4 @@
         
         <a href="/" class="back-link">Volver al inicio</a>
     </div>
-</body>
-</html>
+{% endblock %}

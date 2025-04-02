@@ -3,14 +3,31 @@ from weather_api import get_weather
 import pandas as pd
 
 app = Flask(__name__)
+app.config['TEMPLATES_FOLDER'] = 'templates'
 
 @app.route('/')
 def home():
-    return render_template('index.html', titulo="Inicio")
+    print("\n=== Diagnóstico de Template ===")
+    print("1. Intentando renderizar index.html...")
+    try:
+        result = render_template('index.html', title="Inicio")
+        print("2. Template renderizado exitosamente")
+        return result
+    except Exception as e:
+        print(f"¡Error al renderizar template!: {str(e)}")
+        return "Error al cargar el template"
 
 @app.route('/tiempo')
-def mostrar_formulario_tiempo():
-    return render_template('tiempo.html', titulo="Consultar Tiempo")
+def tiempo():
+    print("\n=== Diagnóstico de Template Tiempo ===")
+    print("1. Intentando renderizar tiempo.html...")
+    try:
+        result = render_template('tiempo.html', title="Tiempo")
+        print("2. Template renderizado exitosamente")
+        return result
+    except Exception as e:
+        print(f"¡Error al renderizar template!: {str(e)}")
+        return "Error al cargar el template"
 
 @app.route('/obtener-tiempo', methods=['POST'])
 def procesar_tiempo():
